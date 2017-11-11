@@ -1,0 +1,3 @@
+# uog-gpa-calc
+
+Calculating your GPA isn't as easy as you think...
