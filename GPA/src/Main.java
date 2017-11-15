@@ -13,11 +13,36 @@ public class Main {
         m.UserInterface();
     }
 
+    private boolean isInteger(String s) {
+
+        try {
+
+            Integer i = Integer.parseInt(s);
+            return i > 0;
+
+        } catch (NumberFormatException e) {
+
+            return false;
+        }
+    }
+
+
+    private boolean isDouble(String s) {
+
+        try {
+
+            Double d = Double.parseDouble(s);
+            return d > 0;
+        } catch (NumberFormatException e) {
+
+            return false;
+        }
+
+    }
+
     public void UserInterface() {
 
         System.out.println("Welcome to GPA Calculator");
-
-
 
         Scanner s = new Scanner(System.in);
 
@@ -73,16 +98,31 @@ public class Main {
         System.out.println("Enter number of lecture hours per week");
         String courseLec = s.nextLine();
         //c.setLecHrs(Double.valueOf(courseLec));
+        while(!isDouble(courseLec)) {
+
+            System.out.println("Enter valid values");
+            courseLec = s.nextLine();
+        }
         System.out.println(courseLec);
 
         System.out.println("Enter number of lab hours per week");
         String courseLab = s.nextLine();
        // c.setLabHrs(Double.valueOf(courseLab));
+        while(!isDouble(courseLab)) {
+
+            System.out.println("Enter valid values");
+            courseLab = s.nextLine();
+        }
         System.out.println(courseLab);
 
         System.out.println("Enter grade received in course 0-100");
         String avg = s.nextLine();
         //c.setPercentGrade(Double.valueOf(avg));
+        while(!isDouble(avg)) {
+
+            System.out.println("Enter valid values");
+            avg = s.nextLine();
+        }
         System.out.println(avg);
 
         //DE courses? seminars vs lectures //labs vs seminars
@@ -91,6 +131,7 @@ public class Main {
 
         //allCourse.add(c);
         allCourse.add(c1);
+
 
         //System.out.println(c.toString(c));
 

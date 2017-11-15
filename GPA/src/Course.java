@@ -29,6 +29,7 @@ public class Course {
 
         this.GPE = GPEConversion(percentGrade);
 
+        //WGP
         this.WGP = this.GPE * this.credHrs;
     }
 
