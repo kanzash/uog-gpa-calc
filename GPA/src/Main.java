@@ -8,9 +8,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello World!");
         Main m = new Main();
         m.UserInterface();
+
+        //GUI g = new GUI();
+
+        //g.setVisible(true);
+
     }
 
     private boolean isInteger(String s) {
@@ -32,12 +36,11 @@ public class Main {
         try {
 
             Double d = Double.parseDouble(s);
-            return d > 0;
+            return d >= 0;
         } catch (NumberFormatException e) {
 
             return false;
         }
-
     }
 
     public void UserInterface() {
@@ -45,7 +48,6 @@ public class Main {
         System.out.println("Welcome to GPA Calculator");
 
         Scanner s = new Scanner(System.in);
-
 
         boolean running = true;
 
@@ -57,7 +59,6 @@ public class Main {
             System.out.println("4. Quit");
 
             String input = s.nextLine();
-            input.charAt(1);
 
             switch (input) {
 
@@ -81,7 +82,6 @@ public class Main {
                     break;
             }
         }
-
     }
 
     private void CourseInfo() {
@@ -154,8 +154,6 @@ public class Main {
         GPA = totalWGP / totalCreditHrs;
 
         System.out.println("Your GPA is: " + GPA);
-
-
     }
 
     private void PrintCourseInfo() {
@@ -165,6 +163,47 @@ public class Main {
         for(int i = 0; i < allCourse.size(); i++) {
 
             System.out.println( c.toString(allCourse.get(i)) );
+        }
+    }
+
+    public void CalculateSemesterAverage() {
+
+        int numCourses = 0;
+
+        for(int i = 0; i < numCourses; i++) {
+
+            //for each course, gather information
+            CourseInfo();
+        }
+
+        if (allCourse.size() == 1) {
+
+            Semester s = new Semester(allCourse.get(0));
+        }
+
+        else if(allCourse.size() == 2) {
+
+            Semester s = new Semester(allCourse.get(0), allCourse.get(1));
+        }
+
+        else if(allCourse.size() == 3) {
+
+            Semester s = new Semester(allCourse.get(0), allCourse.get(1), allCourse.get(2));
+        }
+
+        else if(allCourse.size() == 4) {
+
+            Semester s = new Semester(allCourse.get(0), allCourse.get(1), allCourse.get(2), allCourse.get(3));
+        }
+
+        else if(allCourse.size() == 5) {
+
+            Semester s = new Semester(allCourse.get(0), allCourse.get(1), allCourse.get(2), allCourse.get(3), allCourse.get(4));
+        }
+
+        else if(allCourse.size() == 6) {
+
+            Semester s = new Semester(allCourse.get(0), allCourse.get(1), allCourse.get(2), allCourse.get(3), allCourse.get(4), allCourse.get(5));
         }
     }
 

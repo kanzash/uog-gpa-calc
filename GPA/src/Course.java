@@ -13,7 +13,6 @@ public class Course {
         this.credHrs = 0;
         this.labHrs = 0;
         this.lecHrs = 0;
-
     }
 
     public Course (String name, double lecHrs, double labHrs, double percentGrade) {
@@ -23,13 +22,11 @@ public class Course {
         this.labHrs = labHrs;
         this.percentGrade = percentGrade;
 
+        //credit hours
         this.credHrs = (lecHrs) + (labHrs/2);
-
-
-
+        //grade point average
         this.GPE = GPEConversion(percentGrade);
-
-        //WGP
+        //weighted grade point
         this.WGP = this.GPE * this.credHrs;
     }
 
@@ -97,8 +94,6 @@ public class Course {
 
         return 0;
     }
-
-
 
     public double getLecHrs() {
         return lecHrs;
